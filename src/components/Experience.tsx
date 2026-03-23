@@ -7,7 +7,7 @@ export default function Experience() {
     {
       title: "Junior Flutter Developer",
       company: "Sparktech Agency",
-      period: "March 2025 – Feb 2026",
+      period: "Sept 2025 – Present",
       description: "Developed and maintained cross-platform mobile applications. Started as a Trainee and was promoted to Junior Flutter Developer due to exceptional performance.",
       achievements: [
         "Awarded Top App Developer based on KPI",
