@@ -56,12 +56,15 @@ export default function Hero() {
             Crafting futuristic mobile applications, integrating intelligent AI agents, and ensuring top-tier security for modern systems. B.Sc in CSE at IST (3rd Year) & 3-Star Coder on CodeChef.
           </p>
           
-          <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <a href="#projects" className="px-8 py-4 bg-transparent border-2 border-brand-cyan text-brand-cyan hover:bg-brand-cyan/10 font-bold uppercase tracking-widest transition-all glass-glow-cyan rounded-md">
               View My Work
             </a>
             <a href="#contact" className="px-8 py-4 bg-brand-purple hover:bg-brand-purple/80 text-white font-bold uppercase tracking-widest transition-all glow-purple glass-glow-purple rounded-md">
               Contact Me
+            </a>
+            <a href="/CV Nahid Khan.pdf" download target="_blank" className="px-8 py-4 bg-transparent border-2 border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 font-bold uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(52,211,153,0.2)] rounded-md flex items-center gap-2">
+              <span>Download CV</span>
             </a>
           </div>
         </motion.div>

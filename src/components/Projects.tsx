@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, MessageSquare, Bot, Sparkles } from "lucide-react";
+import { ExternalLink, Github, MessageSquare, Bot, Sparkles, Smartphone } from "lucide-react";
 
 export default function Projects() {
   const projects = [
@@ -10,29 +10,55 @@ export default function Projects() {
       icon: <MessageSquare size={24} className="text-brand-cyan" />,
       tags: ["Socket.io", "JWT", "Flutter", "Real-time"],
       glow: "hover:shadow-[0_0_30px_rgba(0,240,255,0.2)]",
-      border: "hover:border-brand-cyan/50"
+      border: "hover:border-brand-cyan/50",
+      github: "https://github.com/nahidshuvo1802/niche_line_messaging",
+      link: ""
     },
     {
-      title: "AMI Talk",
+      title: "AMI Talk (Cognitive Game)",
       description: "An interactive AI companion capable of perceiving emotional states and generating responsive avatars.",
       icon: <Bot size={24} className="text-brand-purple" />,
       tags: ["AI Avatar", "Emotional States", "TTS", "STT"],
       glow: "hover:shadow-[0_0_30px_rgba(181,0,255,0.2)]",
-      border: "hover:border-brand-purple/50"
+      border: "hover:border-brand-purple/50",
+      github: "https://github.com/sparktechagency/Rishab_Cognitive_Game_App.git",
+      link: ""
     },
     {
-      title: "Tarot AI",
-      description: "A mystical, futuristic AI-driven tarot reading application with beautiful cosmic UI.",
+      title: "Hide & Squeaks (Red Squeaks)",
+      description: "A published iOS game featuring dynamic interactions and smooth animations.",
       icon: <Sparkles size={24} className="text-emerald-400" />,
-      tags: ["LLM Integration", "Flutter", "Animations"],
+      tags: ["iOS App Store", "Flutter", "Animations"],
       glow: "hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]",
-      border: "hover:border-emerald-400/50"
+      border: "hover:border-emerald-400/50",
+      github: "https://github.com/nahidshuvo1802/Red_Squeaks_App-main.git",
+      link: "https://apps.apple.com/gb/app/hide-squeaks/id6759205204"
+    },
+    {
+      title: "Therapist App",
+      description: "A specialized Flutter application to help therapists count and manage sessions dynamically.",
+      icon: <Smartphone size={24} className="text-blue-400" />,
+      tags: ["Google Play", "Flutter", "Management"],
+      glow: "hover:shadow-[0_0_30px_rgba(96,165,250,0.2)]",
+      border: "hover:border-blue-400/50",
+      github: "",
+      link: "https://play.google.com/store/apps/details?id=com.rita.counta_app"
+    },
+    {
+      title: "Consult Me App",
+      description: "A consultation platform to connect users with professionals seamlessly.",
+      icon: <Smartphone size={24} className="text-orange-400" />,
+      tags: ["Google Play", "Flutter", "Networking"],
+      glow: "hover:shadow-[0_0_30px_rgba(251,146,60,0.2)]",
+      border: "hover:border-orange-400/50",
+      github: "",
+      link: "https://play.google.com/store/apps/details?id=com.consultme.consultmeapp"
     }
   ];
 
   return (
     <section id="projects" className="py-24 relative z-10">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -41,12 +67,12 @@ export default function Projects() {
           className="text-right mb-16 flex flex-col items-end"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-4">
-            FEATURED <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">PROJECTS</span>
+            FEATURED <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">PROJECTS & APPS</span>
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-brand-cyan to-brand-purple rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -61,8 +87,16 @@ export default function Projects() {
                   {project.icon}
                 </div>
                 <div className="flex gap-3 text-gray-400">
-                  <a href="#" className="hover:text-white transition-colors"><Github size={20} /></a>
-                  <a href="#" className="hover:text-brand-cyan transition-colors"><ExternalLink size={20} /></a>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                      <Github size={20} />
+                    </a>
+                  )}
+                  {project.link && (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan transition-colors">
+                      <ExternalLink size={20} />
+                    </a>
+                  )}
                 </div>
               </div>
               
