@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { SplitText } from "./SplitText";
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("");
@@ -41,8 +42,12 @@ export default function Hero() {
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4">
-            MD <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">NAHID KHAN</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4 flex flex-col md:flex-row gap-4 items-center justify-center">
+            <span>MD</span>
+            <SplitText 
+              text="NAHID KHAN" 
+              className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple" 
+            />
           </h1>
           
           <div className="h-10 md:h-12 mt-6">

@@ -1,8 +1,11 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, MapPin, Send, Facebook, Globe, Code, Terminal, MessageCircle } from "lucide-react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
   const socialLinks = [
     { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/md-nahid1808/", color: "hover:text-blue-500 hover:border-blue-500", label: "LinkedIn" },
     { icon: <Facebook size={20} />, href: "https://www.facebook.com/nahid1802/", color: "hover:text-blue-600 hover:border-blue-600", label: "Facebook" },
@@ -13,6 +16,17 @@ export default function Contact() {
     { icon: <Code size={20} />, href: "https://www.codechef.com/users/nahid_ist", color: "hover:text-orange-amber-500 hover:border-orange-500", label: "CodeChef" },
     { icon: <Github size={20} />, href: "https://github.com/nahidshuvo1802", color: "hover:text-white hover:border-white", label: "GitHub" },
   ];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.message) return;
+    
+    const subject = encodeURIComponent(`Portfolio Contact: Message from ${formData.name}`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+    
+    window.location.href = `mailto:nahidkhanshuvo7@gmail.com?subject=${subject}&body=${body}`;
+    setFormData({ name: '', email: '', message: '' }); // Clear form
+  };
 
   return (
     <section id="contact" className="py-24 relative z-10 bg-[#060912]/80 border-t border-white/5">
@@ -90,21 +104,41 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <form className="glass p-8 rounded-2xl border border-white/10 space-y-6">
+            <form onSubmit={handleSubmit} className="glass p-8 rounded-2xl border border-white/10 space-y-6">
               <div className="space-y-2">
                 <label className="text-sm uppercase tracking-widest font-mono text-brand-cyan">Name</label>
-                <input type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan focus:bg-white/10 transition-all font-sans" placeholder="John Doe" />
+                <input 
+                  type="text" 
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan focus:bg-white/10 transition-all font-sans" 
+                  placeholder="John Doe" 
+                />
               </div>
               <div className="space-y-2">
-                <label className="text-sm uppercase tracking-widest font-mono text-brand-cyan">Email</label>
-                <input type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan focus:bg-white/10 transition-all font-sans" placeholder="john@example.com" />
+                <label className="text-sm uppercase tracking-widest font-mono text-brand-cyan">Email (Optional)</label>
+                <input 
+                  type="email" 
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan focus:bg-white/10 transition-all font-sans" 
+                  placeholder="john@example.com" 
+                />
               </div>
               <div className="space-y-2">
                 <label className="text-sm uppercase tracking-widest font-mono text-brand-cyan">Message</label>
-                <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan focus:bg-white/10 transition-all resize-none font-sans" placeholder="Let's build something..."></textarea>
+                <textarea 
+                  required
+                  rows={4} 
+                  value={formData.message}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan focus:bg-white/10 transition-all resize-none font-sans" 
+                  placeholder="Let's build something..."
+                ></textarea>
               </div>
               
-              <button type="button" className="w-full py-4 bg-gradient-to-r from-brand-cyan to-brand-purple text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+              <button type="submit" className="w-full py-4 bg-gradient-to-r from-brand-cyan to-brand-purple text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                 <span>Transmit Message</span>
                 <Send size={18} />
               </button>

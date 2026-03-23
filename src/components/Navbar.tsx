@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,12 +57,15 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
-        <a
-          href="#contact"
-          className="hidden md:block py-2 px-5 border border-brand-cyan text-brand-cyan rounded-full hover:bg-brand-cyan/10 transition-colors text-sm font-semibold tracking-wide"
-        >
-          Let's Talk
-        </a>
+        <div className="flex items-center gap-6">
+          <ThemeToggle />
+          <a
+            href="#contact"
+            className="hidden md:block py-2 px-5 border border-brand-cyan text-brand-cyan rounded-full hover:bg-brand-cyan/10 transition-colors text-sm font-semibold tracking-wide"
+          >
+            Let's Talk
+          </a>
+        </div>
       </div>
     </motion.header>
   );
