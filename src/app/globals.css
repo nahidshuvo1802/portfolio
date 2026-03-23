@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-brand-cyan: #00f0ff;
+  --color-brand-purple: #b500ff;
+  --color-brand-dark: #0a0f1c;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --animate-typing: typing 3s steps(40, end);
+  --animate-blink: blink .75s step-end infinite;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: theme('colors.brand.cyan');
+    }
   }
 }
 
+:root {
+  --background: #060912;
+  --foreground: #ffffff;
+}
+
 body {
-  background: var(--background);
   color: var(--foreground);
+  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Glassmorphism helpers */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.glass-glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+.glass-glow-purple {
+  box-shadow: 0 0 20px rgba(181, 0, 255, 0.2);
 }
