@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <motion.a
           href="#home"
-          className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-brand-cyan/50 hover:border-brand-purple hover:shadow-[0_0_20px_rgba(181,0,255,0.6)] transition-all flex-shrink-0"
+          className="relative w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-brand-cyan/50 hover:border-brand-purple hover:shadow-[0_0_20px_rgba(181,0,255,0.6)] transition-all flex-shrink-0"
           whileHover={{ scale: 1.1, rotate: [0, -10, 10, -5, 5, 0] }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.4 }}
