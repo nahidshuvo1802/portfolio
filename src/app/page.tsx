@@ -20,10 +20,17 @@ export default function Home() {
         <Contact />
       </div>
       
-      <footer className="relative z-10 py-8 text-center border-t border-white/5 bg-[#060912]/80 mt-12">
-        <p className="text-gray-500 font-mono text-sm tracking-widest uppercase">
-          © {new Date().getFullYear()} MD NAHID KHAN. All rights reserved.
-        </p>
+      <footer className="relative z-10 py-6 sm:py-8 text-center border-t border-white/5 bg-[#060912]/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-gray-500 font-mono text-xs sm:text-sm tracking-widest uppercase">
+              © {new Date().getFullYear()} MD NAHID KHAN
+            </p>
+            <p className="text-gray-600 font-mono text-xs tracking-wider">
+              Flutter • C# • Published Apps
+            </p>
+          </div>
+        </div>
       </footer>
     </main>
   );
