@@ -12,10 +12,7 @@ import {
   Code,
   Terminal,
   MessageCircle,
-<<<<<<< HEAD
   Phone,
-=======
->>>>>>> c5faa7628d3ce9046251feacda849e30413a5c7e
 } from "lucide-react";
 
 export default function Contact() {
@@ -149,11 +146,7 @@ export default function Contact() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-gray-400 uppercase tracking-widest font-mono">
-<<<<<<< HEAD
                     Email
-=======
-                    Emails
->>>>>>> c5faa7628d3ce9046251feacda849e30413a5c7e
                   </p>
                   <a
                     href="mailto:nahidkhanshuvo7@gmail.com"
@@ -161,20 +154,16 @@ export default function Contact() {
                   >
                     nahidkhanshuvo7@gmail.com
                   </a>
-<<<<<<< HEAD
-=======
                   <a
                     href="mailto:nahid.sparktech@gmail.com"
                     className="text-sm sm:text-base block text-gray-200 group-hover:text-brand-cyan transition-colors truncate"
                   >
                     nahid.sparktech@gmail.com
                   </a>
->>>>>>> c5faa7628d3ce9046251feacda849e30413a5c7e
                 </div>
               </div>
 
               <div className="flex items-center gap-4 group">
-<<<<<<< HEAD
                 <div className="w-11 h-11 sm:w-12 sm:h-12 glass rounded-full flex items-center justify-center border border-white/10 group-hover:border-emerald-400/40 transition-all group-hover:shadow-[0_0_15px_rgba(52,211,153,0.15)] flex-shrink-0">
                   <Phone className="text-emerald-400" size={18} />
                 </div>
@@ -192,8 +181,6 @@ export default function Contact() {
               </div>
 
               <div className="flex items-center gap-4 group">
-=======
->>>>>>> c5faa7628d3ce9046251feacda849e30413a5c7e
                 <div className="w-11 h-11 sm:w-12 sm:h-12 glass rounded-full flex items-center justify-center border border-white/10 group-hover:border-brand-purple/40 transition-all group-hover:shadow-[0_0_15px_rgba(181,0,255,0.15)] flex-shrink-0">
                   <MapPin className="text-brand-purple" size={18} />
                 </div>
