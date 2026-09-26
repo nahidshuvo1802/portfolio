@@ -5,6 +5,7 @@ import FilterTabs from "./FilterTabs";
 import ProjectCard, { type ProjectData } from "./ProjectCard";
 
 const projects: ProjectData[] = [
+<<<<<<< HEAD
   // ── iOS App Store Published Apps ──
   {
     title: "AMI Platform",
@@ -145,6 +146,8 @@ const projects: ProjectData[] = [
     gradientFrom: "#22c55e",
     gradientTo: "#16a34a",
   },
+=======
+>>>>>>> c5faa7628d3ce9046251feacda849e30413a5c7e
   {
     title: "Speedring App",
     description:
@@ -159,8 +162,66 @@ const projects: ProjectData[] = [
     gradientFrom: "#00f0ff",
     gradientTo: "#b500ff",
   },
+<<<<<<< HEAD
 
   // ── Open Source & In Development ──
+=======
+  {
+    title: "NicheLine Messaging",
+    description:
+      "A real-time, secure messaging application with end-to-end encryption, seamless communication streams, and Socket.io powered live chat.",
+    tags: ["Socket.io", "JWT", "Flutter", "Real-time", "Encryption"],
+    category: "flutter",
+    status: "Open Source",
+    platforms: ["iOS", "Android"],
+    github: "https://github.com/nahidshuvo1802/niche_line_messaging",
+    accentColor: "#00f0ff",
+    gradientFrom: "#00f0ff",
+    gradientTo: "#027DFD",
+  },
+  {
+    title: "Hide & Squeaks (Red Squeaks)",
+    description:
+      "A published iOS game featuring dynamic interactions, smooth 60fps animations, and engaging gameplay. Successfully published on the Apple App Store.",
+    tags: ["iOS App Store", "Flutter", "Animations", "Gaming"],
+    category: "published",
+    status: "Published",
+    platforms: ["iOS"],
+    github: "https://github.com/nahidshuvo1802/Red_Squeaks_App-main.git",
+    appStore: "https://apps.apple.com/gb/app/hide-squeaks/id6759205204",
+    accentColor: "#34d399",
+    gradientFrom: "#34d399",
+    gradientTo: "#10b981",
+  },
+  {
+    title: "Therapist App (Counta)",
+    description:
+      "A specialized Flutter application published on Google Play, helping therapists count and manage client sessions dynamically with intuitive UI.",
+    tags: ["Google Play", "Flutter", "Session Management"],
+    category: "published",
+    status: "Published",
+    platforms: ["Android"],
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.rita.counta_app",
+    accentColor: "#60a5fa",
+    gradientFrom: "#60a5fa",
+    gradientTo: "#3b82f6",
+  },
+  {
+    title: "Consult Me App",
+    description:
+      "A consultation platform connecting users with professionals seamlessly. Published on Google Play with appointment booking and real-time notifications.",
+    tags: ["Google Play", "Flutter", "Networking", "Notifications"],
+    category: "published",
+    status: "Published",
+    platforms: ["Android"],
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.consultme.consultmeapp",
+    accentColor: "#fb923c",
+    gradientFrom: "#fb923c",
+    gradientTo: "#f97316",
+  },
+>>>>>>> c5faa7628d3ce9046251feacda849e30413a5c7e
   {
     title: "AMI Talk (Cognitive Game)",
     description:
@@ -202,6 +263,7 @@ const projects: ProjectData[] = [
   },
 ];
 
+<<<<<<< HEAD
 const filterTabs = ["All", "iOS Apps", "Android Apps", "Published", "C# Backend"];
 
 function filterProjects(tab: string): ProjectData[] {
@@ -210,6 +272,16 @@ function filterProjects(tab: string): ProjectData[] {
       return projects.filter((p) => p.platforms.includes("iOS"));
     case "Android Apps":
       return projects.filter((p) => p.platforms.includes("Android"));
+=======
+const filterTabs = ["All", "Flutter Apps", "C# Backend", "Published"];
+
+function filterProjects(tab: string): ProjectData[] {
+  switch (tab) {
+    case "Flutter Apps":
+      return projects.filter(
+        (p) => p.category === "flutter" || (p.category === "published" && p.tags.some((t) => t.includes("Flutter")))
+      );
+>>>>>>> c5faa7628d3ce9046251feacda849e30413a5c7e
     case "C# Backend":
       return projects.filter((p) => p.category === "csharp");
     case "Published":
