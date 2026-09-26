@@ -14,9 +14,9 @@ const floatingBadges = [
 ];
 
 const stats = [
-  { icon: <Smartphone size={18} />, label: "Published Apps", value: "5+" },
+  { icon: <Smartphone size={18} />, label: "Published Apps", value: "11+" },
   { icon: <Server size={18} />, label: "Backend APIs", value: "3+" },
-  { icon: <Rocket size={18} />, label: "Store Listings", value: "4+" },
+  { icon: <Rocket size={18} />, label: "Store Listings", value: "11+" },
 ];
 
 export default function Hero() {

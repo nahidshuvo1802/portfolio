@@ -12,6 +12,7 @@ import {
   Code,
   Terminal,
   MessageCircle,
+  Phone,
 } from "lucide-react";
 
 export default function Contact() {
@@ -145,7 +146,7 @@ export default function Contact() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-gray-400 uppercase tracking-widest font-mono">
-                    Emails
+                    Email
                   </p>
                   <a
                     href="mailto:nahidkhanshuvo7@gmail.com"
@@ -153,11 +154,22 @@ export default function Contact() {
                   >
                     nahidkhanshuvo7@gmail.com
                   </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 group">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 glass rounded-full flex items-center justify-center border border-white/10 group-hover:border-emerald-400/40 transition-all group-hover:shadow-[0_0_15px_rgba(52,211,153,0.15)] flex-shrink-0">
+                  <Phone className="text-emerald-400" size={18} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs text-gray-400 uppercase tracking-widest font-mono">
+                    Phone / WhatsApp
+                  </p>
                   <a
-                    href="mailto:nahid.sparktech@gmail.com"
-                    className="text-sm sm:text-base block text-gray-200 group-hover:text-brand-cyan transition-colors truncate"
+                    href="tel:+8801977848863"
+                    className="text-sm sm:text-base block text-gray-200 group-hover:text-emerald-400 transition-colors truncate"
                   >
-                    nahid.sparktech@gmail.com
+                    +880 1977-848863
                   </a>
                 </div>
               </div>
